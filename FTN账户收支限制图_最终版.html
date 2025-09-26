@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTN账户收支限制图 - 天津2021年第二版政策</title>
+    <script src="mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            margin: 0;
+            padding: 8px;
+            background-color: white;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        h1 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+        }
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 2px;
+        }
+        .feasible { background-color: #4caf50; }
+        .restricted { background-color: #ff9800; }
+        .prohibited { background-color: #f44336; }
+        .policy-note {
+            background-color: #e8f5e8;
+            padding: 8px;
+            border-radius: 4px;
+            margin: 8px 0;
+            border-left: 3px solid #4caf50;
+            font-size: 12px;
+        }
+        .key-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin: 8px 0;
+        }
+        .point-box {
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+        .point-feasible {
+            background-color: #e8f5e8;
+            border-left: 3px solid #4caf50;
+        }
+        .point-restricted {
+            background-color: #fff3e0;
+            border-left: 3px solid #ff9800;
+        }
+        .point-prohibited {
+            background-color: #ffebee;
+            border-left: 3px solid #f44336;
+        }
+        .point-box h4 {
+            margin-top: 0;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .point-box ul {
+            margin: 5px 0;
+            padding-left: 12px;
+        }
+        .point-box li {
+            margin: 3px 0;
+            line-height: 1.3;
+        }
+        @media print {
+            body { 
+                margin: 0; 
+                padding: 0; 
+                background-color: white;
+            }
+            .container { 
+                box-shadow: none; 
+                margin: 0; 
+                padding: 5px; 
+                max-width: 100%;
+            }
+            .mermaid {
+                margin: 5px 0;
+            }
+            .key-points {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 5px;
+            }
+            .point-box {
+                padding: 5px;
+                font-size: 10px;
+            }
+            .point-box h4 {
+                font-size: 11px;
+            }
+            .policy-note {
+                padding: 5px;
+                font-size: 10px;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FTN账户收支限制图</h1>
+        <p class="subtitle">基于天津2021年第二版政策 | 优质客户适用</p>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color feasible"></div>
+                <span>✅ 完全可行</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color restricted"></div>
+                <span>⚠️ 有限制</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color prohibited"></div>
+                <span>❌ 禁止</span>
+            </div>
+        </div>
+
+        <div class="mermaid">
+            graph TD
+                A["FTN账户优质客户"] --> B["跨一线结算<br/>（境外方向）<br/>🔓 放开"]
+                A --> C["跨二线异户名结算<br/>（境内方向）<br/>🔒 管住"]
+                A --> D["NRA同名账户划转<br/>（特殊规则）"]
+                
+                B --> B1["同户名划转"]
+                B --> B2["异户名结算"]
+                
+                B1 --> B11["FTN↔同名FTN<br/>FTN↔同名境外账户<br/>FTN↔同名OSA账户"]
+                B2 --> B21["FTN↔异名FTN<br/>FTN↔异名境外账户<br/>FTN↔异名NRA账户<br/>FTN↔异名OSA账户"]
+                
+                B11 --> B3["✅ 完全放开<br/>STP直通结算<br/>仅凭收付款指令"]
+                B21 --> B3
+                
+                C --> C1["经常项下业务"]
+                C --> C2["直接投资业务"]
+                C --> C3["金融要素市场交易"]
+                C --> C4["其他业务"]
+                
+                C1 --> C11["⚠️ 管住但便利<br/>简化流程<br/>仅凭收付款指令<br/>首次需承诺书"]
+                C2 --> C11
+                C3 --> C11
+                C4 --> C41["🔒 严格管住<br/>标准流程<br/>提交全套材料<br/>银行逐笔审核"]
+                
+                D --> D1["人民币NRA"]
+                D --> D2["外币NRA"]
+                
+                D1 --> D11["✅ 人民币双向划转<br/>但不得购汇"]
+                D2 --> D21["✅ 外币可划入FTN<br/>❌ 外币不得划出FTN"]
+                
+                B3
+                C11
+                C41
+                D11
+                D21
+        </div>
+
+        <div class="key-points">
+            <div class="point-box point-feasible">
+                <h4>✅ 完全可行</h4>
+                <ul>
+                    <li><strong>跨一线结算</strong>：同户名和异户名境外业务，STP直通结算</li>
+                    <li><strong>跨二线简化业务</strong>：经常项下、直接投资、金融要素市场</li>
+                    <li><strong>NRA人民币划转</strong>：人民币双向划转但不得购汇</li>
+                    <li><strong>NRA外币划入</strong>：外币可原币划入FTN</li>
+                </ul>
+            </div>
+            
+            <div class="point-box point-restricted">
+                <h4>⚠️ 有限制</h4>
+                <ul>
+                    <li><strong>跨二线其他业务</strong>：需标准流程，提交全套材料</li>
+                    <li><strong>承诺书要求</strong>：首次简化流程需提供承诺书</li>
+                    <li><strong>币种一致性</strong>：同户名账户必须币种一致</li>
+                    <li><strong>动态监控</strong>：优质客户资格动态调整</li>
+                </ul>
+            </div>
+            
+            <div class="point-box point-prohibited">
+                <h4>❌ 禁止</h4>
+                <ul>
+                    <li><strong>NRA外币划出</strong>：FTN外币不得划入NRA账户</li>
+                    <li><strong>币种转换</strong>：不得购汇或结汇后划转</li>
+                    <li><strong>虚假交易</strong>：严禁构造虚假贸易背景</li>
+                    <li><strong>违规转移</strong>：不得利用FTN转移资金</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-note">
+            <h4>📖 政策核心原则</h4>
+            <p><strong>🔓 跨"一线"放开</strong>：FTN账户对境外（包括同户名和异户名），完全放开，享受STP直通结算服务，仅凭收付款指令即可办理。</p>
+            <p><strong>🔒 跨"二线"管住</strong>：FTN账户对境内，严格管住，需要客户分类管理，优质客户可享受简化流程，一般客户需标准流程。</p>
+            <p><strong>特殊规则</strong>：NRA同名账户有特殊币种限制，人民币可双向划转但不得购汇，外币仅可划入FTN不得划出FTN。</p>
+        </div>
+
+        <div class="policy-note">
+            <h4>🛡️ "三反"规则</h4>
+            <p><strong>反洗钱</strong>：银行需履行反洗钱义务，持续关注、动态跟踪、合理评定客户的"三反"风险等级，建立健全涉"反"风险管理和监测信息的叠加互促机制。</p>
+            <p><strong>反恐怖融资</strong>：银行应做好跨"一线"跨境直通结算服务"三反"风险的预警与甄别工作，并采取有针对性的风险防控措施。</p>
+            <p><strong>反逃税</strong>：银行按照本操作指引要求，尽职履行"三反"报告义务和自身跨"一线"跨境直通结算服务内控制度要求的，对于客户的相关不当行为，在监管部门非现场监测和现场检查中，银行可以免责。</p>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            themeVariables: {
+                fontSize: '12px',
+                fontFamily: 'Microsoft YaHei, Arial, sans-serif'
+            }
+        });
+    </script>
+</body>
+</html>

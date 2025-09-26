@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTN账户收支限制一页图 - 天津2021年第二版政策</title>
+    <script src="mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+        .feasible { background-color: #4caf50; }
+        .restricted { background-color: #ff9800; }
+        .prohibited { background-color: #f44336; }
+        .policy-note {
+            background-color: #e8f5e8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #4caf50;
+            font-size: 14px;
+        }
+        .key-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .point-box {
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .point-feasible {
+            background-color: #e8f5e8;
+            border-left: 4px solid #4caf50;
+        }
+        .point-restricted {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff9800;
+        }
+        .point-prohibited {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+        }
+        @media print {
+            body { margin: 0; padding: 0; }
+            .container { box-shadow: none; margin: 0; padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FTN账户收支限制一页图</h1>
+        <p style="text-align: center; color: #666; margin-bottom: 20px;">基于天津2021年第二版政策 | 优质客户适用</p>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color feasible"></div>
+                <span>✅ 可行</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color restricted"></div>
+                <span>⚠️ 限制</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color prohibited"></div>
+                <span>❌ 禁止</span>
+            </div>
+        </div>
+
+        <div class="mermaid">
+            graph TD
+                A["FTN账户优质客户"] --> B["跨一线结算"]
+                A --> C["跨二线结算"]
+                A --> D["NRA账户划转"]
+                
+                B --> B1["同户名划转"]
+                B --> B2["异户名结算"]
+                
+                B1 --> B11["FTN ↔ 同名FTN"]
+                B1 --> B12["FTN ↔ 同名境外账户"]
+                B1 --> B13["FTN ↔ 同名NRA"]
+                B1 --> B14["FTN ↔ 同名OSA"]
+                
+                B2 --> B21["FTN ↔ 异名FTN"]
+                B2 --> B22["FTN ↔ 异名境外账户"]
+                B2 --> B23["FTN ↔ 异名NRA"]
+                B2 --> B24["FTN ↔ 异名OSA"]
+                
+                C --> C1["FTN ↔ 异名普通账户"]
+                C1 --> C11["经常项下业务"]
+                C1 --> C12["直接投资项下业务"]
+                C1 --> C13["金融要素市场交易"]
+                C1 --> C14["其他业务"]
+                
+                D --> D1["人民币NRA账户"]
+                D --> D2["外币NRA账户"]
+                
+                D1 --> D11["NRA → FTN"]
+                D1 --> D12["FTN → NRA"]
+                D2 --> D21["NRA → FTN"]
+                D2 --> D22["FTN → NRA"]
+                
+                B11 --> E1["✅ STP直通结算<br/>仅凭收付款指令"]
+                B12 --> E1
+                B13 --> E1
+                B14 --> E1
+                B21 --> E1
+                B22 --> E1
+                B23 --> E1
+                B24 --> E1
+                
+                C11 --> E2["✅ 简化流程<br/>仅凭收付款指令"]
+                C12 --> E2
+                C13 --> E2
+                C14 --> E3["⚠️ 标准流程<br/>提交全套佐证材料"]
+                
+                D11 --> E4["✅ 人民币双向划转"]
+                D12 --> E5["⚠️ 原则上不得划入<br/>特殊情况除外"]
+                D21 --> E6["✅ 外币原币划转"]
+                D22 --> E7["❌ 原则上不得划入"]
+                
+                E1 --> F["满足信息报送要求<br/>履行三反义务"]
+                E2 --> F
+                E3 --> F
+                E4 --> F
+                E5 --> F
+                E6 --> F
+                E7 --> F
+        </div>
+
+        <div class="key-points">
+            <div class="point-box point-feasible">
+                <h4>✅ 完全可行</h4>
+                <ul>
+                    <li><strong>跨一线结算</strong>：所有同户名和异户名划转</li>
+                    <li><strong>跨二线简化业务</strong>：经常项下、直接投资、金融要素市场</li>
+                    <li><strong>NRA人民币划入</strong>：人民币NRA → FTN</li>
+                    <li><strong>NRA外币划入</strong>：外币NRA → FTN</li>
+                </ul>
+            </div>
+            
+            <div class="point-box point-restricted">
+                <h4>⚠️ 有限制</h4>
+                <ul>
+                    <li><strong>跨二线其他业务</strong>：需标准流程审核</li>
+                    <li><strong>FTN人民币划出</strong>：原则上不得划入NRA</li>
+                    <li><strong>币种一致性</strong>：同户名账户必须币种一致</li>
+                    <li><strong>优质客户资格</strong>：动态监控，违规即移出</li>
+                </ul>
+            </div>
+            
+            <div class="point-box point-prohibited">
+                <h4>❌ 禁止</h4>
+                <ul>
+                    <li><strong>FTN外币划出</strong>：原则上不得划入NRA</li>
+                    <li><strong>虚假交易背景</strong>：严禁构造虚假贸易</li>
+                    <li><strong>违规资金转移</strong>：不得利用FTN转移资金</li>
+                    <li><strong>制裁名单企业</strong>：不得为制裁企业办理业务</li>
+                </ul>
+            </div>
+            
+            <div class="point-box point-feasible">
+                <h4>📋 办理要求</h4>
+                <ul>
+                    <li><strong>首次简化业务</strong>：需提供承诺书</li>
+                    <li><strong>信息报送</strong>：满足监管报送要求</li>
+                    <li><strong>三反义务</strong>：反洗钱、反恐怖融资、反逃税</li>
+                    <li><strong>展业三原则</strong>：了解客户、了解业务、尽职调查</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-note">
+            <h4>🔑 关键要点</h4>
+            <p><strong>STP服务</strong>：跨"一线"结算可提供跨境直通结算服务，仅凭收付款指令即可办理。</p>
+            <p><strong>简化流程</strong>：优质客户办理经常项下、直接投资项下、金融要素市场交易可简化办理。</p>
+            <p><strong>币种限制</strong>：同户名账户间资金划转必须币种一致，不得购汇或结汇后划转。</p>
+            <p><strong>动态监控</strong>：银行持续监控优质客户业务，违规立即移出优质客户名单。</p>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+    </script>
+</body>
+</html>
+

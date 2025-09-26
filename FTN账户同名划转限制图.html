@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTN账户同名划转限制图 - 天津2021年第二版政策</title>
+    <script src="mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+        }
+        .legend-color {
+            width: 25px;
+            height: 25px;
+            border-radius: 4px;
+        }
+        .feasible { background-color: #4caf50; }
+        .restricted { background-color: #ff9800; }
+        .prohibited { background-color: #f44336; }
+        .policy-note {
+            background-color: #e8f5e8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 6px solid #4caf50;
+            font-size: 16px;
+        }
+        .key-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .point-box {
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .point-feasible {
+            background-color: #e8f5e8;
+            border-left: 6px solid #4caf50;
+        }
+        .point-restricted {
+            background-color: #fff3e0;
+            border-left: 6px solid #ff9800;
+        }
+        .point-prohibited {
+            background-color: #ffebee;
+            border-left: 6px solid #f44336;
+        }
+        .point-box h4 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .point-box ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .point-box li {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        @media print {
+            body { margin: 0; padding: 0; }
+            .container { box-shadow: none; margin: 0; padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FTN账户同名划转限制图</h1>
+        <p class="subtitle">基于天津2021年第二版政策 | 优质客户适用</p>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color feasible"></div>
+                <span>✅ 完全可行</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color restricted"></div>
+                <span>⚠️ 有限制</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color prohibited"></div>
+                <span>❌ 禁止</span>
+            </div>
+        </div>
+
+        <div class="mermaid">
+            graph TD
+                A["FTN账户优质客户<br/>同名划转业务"] --> B["跨一线同名划转"]
+                A --> C["NRA账户同名划转"]
+                
+                B --> B1["FTN ↔ 同名FTN账户"]
+                B --> B2["FTN ↔ 同名境外账户"]
+                B --> B3["FTN ↔ 同名OSA账户"]
+                
+                C --> C1["人民币NRA账户"]
+                C --> C2["外币NRA账户"]
+                
+                C1 --> C11["NRA人民币 → FTN人民币"]
+                C1 --> C12["FTN人民币 → NRA人民币"]
+                C2 --> C21["NRA外币 → FTN外币"]
+                C2 --> C22["FTN外币 → NRA外币"]
+                
+                B1 --> D1["✅ STP直通结算<br/>人民币/外币均可<br/>仅凭收付款指令"]
+                B2 --> D1
+                B3 --> D1
+                
+                C11 --> D2["✅ 人民币双向划转<br/>同币种划转<br/>NRA汇出行审核"]
+                C12 --> D3["⚠️ 原则上不得划入<br/>特殊情况除外<br/>同币种要求"]
+                C21 --> D4["✅ 外币原币划转<br/>同币种划转<br/>NRA汇出行审核"]
+                C22 --> D5["❌ 原则上不得划入<br/>同币种要求"]
+                
+                D1 --> E["履行三反义务<br/>反洗钱反恐怖融资反逃税"]
+                D2 --> E
+                D3 --> E
+                D4 --> E
+                D5 --> E
+                
+                F["币种一致性要求"] --> F1["人民币NRA不得购汇后划至FTN"]
+                F --> F2["外币NRA不得结汇后划至FTN"]
+                F --> F3["同户名账户划转必须币种一致"]
+                
+                C11 --> F
+                C12 --> F
+                C21 --> F
+                C22 --> F
+        </div>
+
+        <div class="key-points">
+            <div class="point-box point-feasible">
+                <h4>✅ 完全可行</h4>
+                <ul>
+                    <li><strong>跨一线同名划转</strong>：FTN与同名FTN、境外账户、OSA账户之间（人民币/外币均可）</li>
+                    <li><strong>NRA人民币划入</strong>：人民币NRA账户资金可划入FTN人民币账户</li>
+                    <li><strong>NRA外币划入</strong>：外币NRA账户资金可原币划入FTN外币账户</li>
+                    <li><strong>STP服务</strong>：跨一线结算可提供跨境直通结算服务</li>
+                </ul>
+            </div>
+            
+            <div class="point-box point-restricted">
+                <h4>⚠️ 有限制</h4>
+                <ul>
+                    <li><strong>FTN人民币划出</strong>：原则上不得划入同名人民币NRA账户</li>
+                    <li><strong>币种一致性</strong>：同户名账户间资金划转必须币种一致</li>
+                    <li><strong>特殊情况</strong>：FTN人民币划入NRA需要特殊审批</li>
+                    <li><strong>审核要求</strong>：NRA账户汇出行需进行合规性审核</li>
+                </ul>
+            </div>
+            
+            <div class="point-box point-prohibited">
+                <h4>❌ 禁止</h4>
+                <ul>
+                    <li><strong>FTN外币划出</strong>：原则上不得划入同名外币NRA账户</li>
+                    <li><strong>币种转换划转</strong>：人民币NRA不得购汇后划至FTN</li>
+                    <li><strong>币种转换划转</strong>：外币NRA不得结汇后划至FTN</li>
+                    <li><strong>违规操作</strong>：不得违反币种一致性要求</li>
+                </ul>
+            </div>
+            
+            <div class="point-box point-feasible">
+                <h4>📋 办理要求</h4>
+                <ul>
+                    <li><strong>信息报送</strong>：满足监管信息报送要求</li>
+                    <li><strong>三反义务</strong>：履行反洗钱、反恐怖融资、反逃税义务</li>
+                    <li><strong>展业三原则</strong>：了解客户、了解业务、尽职调查</li>
+                    <li><strong>合规审核</strong>：NRA账户汇出行进行合规性审核</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-note">
+            <h4>🔑 关键要点</h4>
+            <p><strong>STP服务</strong>：跨"一线"同名划转可提供跨境直通结算服务，人民币和外币业务均可，仅凭收付款指令即可办理。</p>
+            <p><strong>币种一致性要求</strong>：同户名账户间资金划转必须币种一致，人民币NRA账户内资金不得购汇后划至同名FTN账户，外币NRA账户内资金不得结汇后划至同名FTN账户。</p>
+            <p><strong>NRA划转限制</strong>：FTN账户资金原则上不得划入同名NRA账户，特别是外币资金，人民币资金在特殊情况下可考虑。</p>
+            <p><strong>币种转换禁止</strong>：严禁通过购汇或结汇的方式在同户名账户间进行跨币种划转。</p>
+            <p><strong>审核责任</strong>：对机构同名账户资金划转的币种一致性由NRA账户的汇出行进行合规性审核。</p>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+    </script>
+</body>
+</html>
