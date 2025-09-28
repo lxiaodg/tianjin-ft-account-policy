@@ -143,14 +143,14 @@
                 C2 --> C21["NRA外币 → FTN外币"]
                 C2 --> C22["FTN外币 → NRA外币"]
                 
-                B1 --> D1["✅ STP直通结算<br/>人民币/外币均可<br/>仅凭收付款指令"]
+                B1 --> D1["✅ 跨一线STP直通结算<br/>人民币/外币均可<br/>仅凭收付款指令"]
                 B2 --> D1
                 B3 --> D1
                 
-                C11 --> D2["✅ 人民币双向划转<br/>同币种划转<br/>NRA汇出行审核"]
-                C12 --> D3["⚠️ 原则上不得划入<br/>特殊情况除外<br/>同币种要求"]
+                C11 --> D2["✅ NRA→FTN人民币划转<br/>同币种划转<br/>NRA汇出行审核"]
+                C12 --> D3["✅ FTN→NRA人民币划转<br/>但不得购汇<br/>同币种要求"]
                 C21 --> D4["✅ 外币原币划转<br/>同币种划转<br/>NRA汇出行审核"]
-                C22 --> D5["❌ 原则上不得划入<br/>同币种要求"]
+                C22 --> D5["❌ FTN→NRA外币划转<br/>严格禁止<br/>同币种要求"]
                 
                 D1 --> E["履行三反义务<br/>反洗钱反恐怖融资反逃税"]
                 D2 --> E
@@ -182,9 +182,9 @@
             <div class="point-box point-restricted">
                 <h4>⚠️ 有限制</h4>
                 <ul>
-                    <li><strong>FTN人民币划出</strong>：原则上不得划入同名人民币NRA账户</li>
+                    <li><strong>FTN人民币划出</strong>：可划入同名人民币NRA账户，但不得购汇</li>
                     <li><strong>币种一致性</strong>：同户名账户间资金划转必须币种一致</li>
-                    <li><strong>特殊情况</strong>：FTN人民币划入NRA需要特殊审批</li>
+                    <li><strong>购汇限制</strong>：FTN人民币划入NRA后不得购汇</li>
                     <li><strong>审核要求</strong>：NRA账户汇出行需进行合规性审核</li>
                 </ul>
             </div>
@@ -192,7 +192,7 @@
             <div class="point-box point-prohibited">
                 <h4>❌ 禁止</h4>
                 <ul>
-                    <li><strong>FTN外币划出</strong>：原则上不得划入同名外币NRA账户</li>
+                    <li><strong>FTN外币划出</strong>：严格禁止划入同名外币NRA账户</li>
                     <li><strong>币种转换划转</strong>：人民币NRA不得购汇后划至FTN</li>
                     <li><strong>币种转换划转</strong>：外币NRA不得结汇后划至FTN</li>
                     <li><strong>违规操作</strong>：不得违反币种一致性要求</li>
@@ -214,7 +214,7 @@
             <h4>🔑 关键要点</h4>
             <p><strong>STP服务</strong>：跨"一线"同名划转可提供跨境直通结算服务，人民币和外币业务均可，仅凭收付款指令即可办理。</p>
             <p><strong>币种一致性要求</strong>：同户名账户间资金划转必须币种一致，人民币NRA账户内资金不得购汇后划至同名FTN账户，外币NRA账户内资金不得结汇后划至同名FTN账户。</p>
-            <p><strong>NRA划转限制</strong>：FTN账户资金原则上不得划入同名NRA账户，特别是外币资金，人民币资金在特殊情况下可考虑。</p>
+            <p><strong>NRA划转规则</strong>：FTN人民币资金可划入同名NRA账户但不得购汇，FTN外币资金严格禁止划入同名NRA账户。</p>
             <p><strong>币种转换禁止</strong>：严禁通过购汇或结汇的方式在同户名账户间进行跨币种划转。</p>
             <p><strong>审核责任</strong>：对机构同名账户资金划转的币种一致性由NRA账户的汇出行进行合规性审核。</p>
         </div>
